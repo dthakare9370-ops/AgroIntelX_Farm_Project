@@ -1,0 +1,306 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=0.5 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={},
+    pdfauthor={},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\makeatother
+\pagestyle{empty}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{}\hspace{\widthof{}}
+    }}}%
+  }%
+}%
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Dnyaneshwar Thakare}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:ddthakare9370@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}ddthakare9370@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+91-9370155447}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}9370155447}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://gitlab.com/dthakare9370}{\color{black}{\footnotesize\faGitlab}\hspace*{0.13cm}dthakare9370}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/dnyaneshwar-thakare-700795233}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}dnyaneshwar-thakare-700795233}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Nashik, Maharashtra - 423301, India}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+    \section{OBJECTIVE}
+
+    \begin{onecolentry}
+        Seeking challenging opportunities where I can fully use my skills and knowledge for my growth as well as the success of the organization.
+    \end{onecolentry}
+
+    % EDUCATION
+\section{EDUCATION}
+
+\begin{twocolentry}{
+\textit{Sept 2024 – May 2027}\\
+\text{Pune, India}
+}
+\textbf{TSSM's Bhivarabai Sawant College of Engineering and Research}
+
+\textit{BE in Computer Engineering}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+\item CGPA: 9.46/10.00
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{Sept 2021 – May 2024}\\
+\text{Nashik, India}
+}
+\textbf{Government Polytechnic Nashik}
+
+\textit{Diploma in Computer Technology}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Percentage: 87.94
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{March 2021}\\
+\text{Nashik, India}
+}
+\textbf{Madhyamic Vidyalay Talwade Diger}
+
+\textit{Secondary School Certificate (SSC)}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Percentage: 95.80
+\end{highlights}
+\end{onecolentry}
+
+    \section{PROJECTS}
+
+    \begin{twocolentry}{\textit{}}
+        \textbf{StoryForge}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed a Java-based storytelling desktop application using MVC architecture to create and manage interactive stories. Integrated Firebase for secure authentication and real-time collaboration through chat.
+            \item Tools Used: Java, JavaFX, OOP, Firebase, Exception Handling
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\textit{}}
+        \textbf{PathFinder}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built a Flutter-based mobile application designed to assist engineering students with academic resources and subject guidance.
+            \item Tools Used: Flutter, Dart, Firebase, API Binding
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.2 cm}
+
+    \begin{twocolentry}{\textit{}}
+        \textbf{AgroIntelX – Smart Farming IoT App}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built a cross-platform Flutter app integrating live IoT sensor data (ThingSpeak API), real-time weather, and Google Gemini AI to provide smart crop planning and an AI chatbot for Indian farmers.
+            \item Tools Used: Flutter, Dart, Google Gemini API, ThingSpeak API, OpenWeatherMap API, REST APIs
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{SKILLS}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Programming Languages:} Java, Python, Dart
+            \item \textbf{Web Technologies:} HTML, CSS, JavaScript
+            \item \textbf{Mobile Development:} Flutter
+            \item \textbf{Database Systems:} MySQL, MongoDB, Firebase
+            \item \textbf{Other:} Git, GitLab (Version Control), IoT
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{CERTIFICATIONS}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Java Programming Certification} \\
+            Completed an in-depth Java programming course with practical experience in core concepts and Object-Oriented Programming. \\
+            \textit{Key Skills: Java, Object-Oriented Programming, Problem Solving}
+
+            \vspace{0.2cm}
+
+            \item \textbf{Flutter Development Certification} \\
+            Gained hands-on experience in Flutter by building responsive mobile applications. \\
+            \textit{Key Skills: Flutter, Dart, Firebase Integration}
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.3cm}
+
+    \section{ACHIEVEMENTS}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Quizathon Competition – Core2Web} \\
+            Secured \textbf{10th Rank} among 700+ participating students in a competitive coding Quizathon organized by Core2Web.
+        \end{highlights}
+    \end{onecolentry}
+
+\end{document}

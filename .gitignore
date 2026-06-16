@@ -1,0 +1,9 @@
+*.md
+*.txt
+!README.md
+
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+**/build/
